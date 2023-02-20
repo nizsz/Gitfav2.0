@@ -1,0 +1,269 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --color-text: #E1E1E6;
+  --color-text-button: #FFFFFF;
+  --color-modal: #4E5455;;
+  --color-placeholder-input: #7C7C8A ;
+  --color-btn-remove:#F75A68;
+  
+  --bg-button:#065E7C;
+  --bg-input: #06181C;
+  --bg-table: #092D38;
+  --bg-modal: #030B0D;
+  
+  --hue:195;
+  --table-row-odd: rgba(6, 22, 27, 0.5);
+  --table-row-even: hsla(var(--hue), 65%, 7%, 100%) ;
+  --border-table:#4A808C;
+}
+
+body {
+  background-color: black;
+  color: var(--color-text);
+}
+
+body * {
+  font-size: 1.6rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border-width: 0;
+  overflow: hidden;
+ 
+}
+
+
+.modal-wrapper.hide {
+  display: none;
+  visibility: hidden;
+  
+}
+
+
+
+
+.app {
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+
+
+.modal-wrapper {
+  background: var(--table-row-odd);
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+  justify-content: center;
+  height: 60vh;
+  margin-top: -6rem;
+}
+
+.modal-wrapper h1 {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 2.5rem;
+  color: var(--color-modal);
+}
+
+.modal-wrapper img {
+  width: 13rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 8.7rem 0;
+}
+
+.search button, table th, tbody p, tbody td, .remove, .user a {
+  font-weight: 700;
+}
+
+.search {
+  display: flex;
+}
+
+.search input::placeholder{
+  color:var(--color-placeholder-input);
+  font-size: 1.4rem;
+  
+}
+
+.search input {
+  width: 40rem; 
+  height: 4.8rem;
+  
+  border: none;
+  border-radius:.5rem ;
+  
+  color: var(--color-text);
+  font-size: 1.6rem;
+  background-color: var(--bg-input);
+  padding: 1.6rem;
+}
+
+.search button {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  
+  padding: 1.2rem 3.2rem;
+  height: 4.8rem;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  background-color: var(--bg-button);
+  color: var(--color-text-button);
+
+  border-radius: .5rem;
+
+  cursor: pointer;
+}
+
+.search button:hover {
+  background: #FFFFFF;
+  color: #065E7C;
+  transition: .5s;
+}
+
+.search button:hover svg path {
+  fill: #065E7C;
+  transition: .5s;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+}
+
+.box {
+  margin: auto;	
+  border-radius: .8rem;
+  border: 1px solid var(--border-table);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  overflow: hidden;
+}
+
+
+table th {
+  background-color: var(--bg-table);
+  text-align: left;
+  padding: 1.6rem 4rem;
+}
+
+
+table th:first-child {
+  border-top-left-radius: .8rem; 
+}
+
+table th:last-child {
+  border-top-right-radius: .8rem ; 
+  
+}
+
+tbody tr:nth-child(even) {
+  background: var(--table-row-even) ; 
+  border-top: 1px solid var(--border-table) ;
+  border-bottom: 1px solid #092D38;
+  position: relative;
+  
+}
+
+tbody tr:nth-child(odd) {
+  background: var(--table-row-odd);
+  position: relative;
+  
+  
+}
+
+
+table td {
+  padding: 2.4rem 4rem;
+}
+
+
+td.user {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+
+
+td.user img {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+td.user a{
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: 2rem;
+  display: grid;
+  align-self: end;
+}
+
+
+td.user span {
+  font-weight: normal;
+  opacity: 0.9;
+  line-height: 3.2rem;
+  font-size: 1.9rem;
+}
+
+.remove {
+  color: var(--color-btn-remove);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width:750px) {
+
+  .sr-only {
+    position: relative;
+    clip: revert;
+    white-space: nowrap;
+    border-width: 1px;
+    overflow: visible;
+  }
+
+  .search label {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--color-text);
+  }
+
+  .search label {
+    display: grid;
+    position:fixed;
+    margin-top: -3rem;
+  }
+
+  header {
+    gap: 7rem;
+  }
+
+
+}
